@@ -20,6 +20,7 @@
         android:textColor="@color/UioT_color"
         android:textSize="20sp"
         android:textStyle="bold"
+
         tools:ignore="HardcodedText" />
 
     <TextView

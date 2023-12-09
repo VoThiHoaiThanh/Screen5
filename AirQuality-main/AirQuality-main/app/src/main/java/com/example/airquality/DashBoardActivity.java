@@ -8,7 +8,10 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.airquality.API.APIInterface;
 import com.example.airquality.API.ApIClient;
@@ -19,14 +22,16 @@ import retrofit2.Callback;
 import retrofit2.Response;
 public class DashBoardActivity extends AppCompatActivity {
     String ID = null;
+    Boolean getapi =false;
     APIInterface apiInterface;
     TextView user, DayofWeek, location, Temp, Feels, descript, Sunrise, Sunset, Humidity;
+    ImageView Descript, SRise, SSet, Hum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
-
+        //Textview
         user = findViewById(R.id.as);
         DayofWeek = findViewById(R.id.Day);
         location = findViewById(R.id.Location);
@@ -36,6 +41,24 @@ public class DashBoardActivity extends AppCompatActivity {
         Sunrise = findViewById(R.id.sunrise);
         Sunset = findViewById(R.id.sunset);
         Humidity = findViewById(R.id.Humidity);
+        //ImageView
+        Descript = findViewById(R.id.imageView3);
+        SRise = findViewById(R.id.imageView4);
+        SSet = findViewById(R.id.imageView5);
+        Hum = findViewById(R.id.imageView6);
+        //ẩn
+        DayofWeek.setVisibility(View.INVISIBLE);
+        location.setVisibility(View.INVISIBLE);
+        Temp.setVisibility(View.INVISIBLE);
+        Feels.setVisibility(View.INVISIBLE);
+        descript.setVisibility(View.INVISIBLE);
+        Sunrise.setVisibility(View.INVISIBLE);
+        Sunset.setVisibility(View.INVISIBLE);
+        Humidity.setVisibility(View.INVISIBLE);
+        Descript.setVisibility(View.INVISIBLE);
+        SRise.setVisibility(View.INVISIBLE);
+        SSet.setVisibility(View.INVISIBLE);
+        Hum.setVisibility(View.INVISIBLE);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("mypackage");
@@ -80,6 +103,20 @@ public class DashBoardActivity extends AppCompatActivity {
                 Log.d("API CALL", responseinfo.toString());
                 Asset asset = responseinfo.body();
                 if (asset != null) {
+                    DayofWeek.setVisibility(View.VISIBLE);
+                    location.setVisibility(View.VISIBLE);
+                    Temp.setVisibility(View.VISIBLE);
+                    Feels.setVisibility(View.VISIBLE);
+                    descript.setVisibility(View.VISIBLE);
+                    Sunrise.setVisibility(View.VISIBLE);
+                    Sunset.setVisibility(View.VISIBLE);
+                    Humidity.setVisibility(View.VISIBLE);
+                    Humidity.setVisibility(View.VISIBLE);
+                    Descript.setVisibility(View.VISIBLE);
+                    SRise.setVisibility(View.VISIBLE);
+                    SSet.setVisibility(View.VISIBLE);
+                    Hum.setVisibility(View.VISIBLE);
+                    getapi = true;
                     String dt = asset.attributes.data.value.dt;
                     try {
                         long time = Long.parseLong(dt) * 1000L;
@@ -134,5 +171,9 @@ public class DashBoardActivity extends AppCompatActivity {
             public void onFailure(Call<Asset> callinfo, Throwable t) {
             }
         });
+        if (descript.getVisibility() == View.INVISIBLE)
+        {
+            Toast.makeText(DashBoardActivity.this,"No Permission",Toast.LENGTH_LONG).show();
+        }
     }
 }
