@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroung_home"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/nameApp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="UiOT"
+        android:paddingLeft="15sp"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:textColor="@color/UioT_color"
+        tools:ignore="HardcodedText"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_Language"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="96dp"
+        android:layout_toEndOf="@+id/nameApp"
+        android:adjustViewBounds="true"
+        tools:ignore="HardcodedText"
+        android:contentDescription="Select language You Want"
+        android:background="@drawable/circle_button"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/language_vn" />
+
+    <TextView
+        android:id="@+id/nameApp_HOME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="272dp"
+        android:layout_marginBottom="369dp"
+        android:gravity="center"
+        android:text="Welcome to AirQuality"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button_SignIn"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameApp_HOME"
+        android:layout_marginTop="-350dp"
+        tools:ignore="HardcodedText"
+        android:background="@drawable/custom_button"
+        android:text="Sign In"
+        android:textColor="@color/editText"
+        android:textSize="20sp"
+        app:backgroundTint="@null"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/button_SignUP"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_OR"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_button"
+        android:text="Sign Up"
+        tools:ignore="HardcodedText"
+        android:textColor="@color/editText"
+        android:textSize="20sp"
+        app:backgroundTint="@null"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_OR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_SignIn"
+        android:layout_marginTop="10dp"
+        android:text="------- OR -------"
+        tools:ignore="HardcodedText"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"/>
+
+
+    <ImageButton
+        android:id="@+id/btn_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_SignUP"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/back_gr"
+        android:contentDescription="continue with Google "
+        tools:ignore="HardcodedText"
+        android:background="@drawable/custom_imagebutton"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btn_Forgot_Pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_google"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/custom_imagebutton"
+        android:text="Forgot password?"
+        android:textColor="@color/Gray"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText"
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic"
+        />
+
+
+</RelativeLayout>
