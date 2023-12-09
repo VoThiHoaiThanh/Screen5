@@ -9,26 +9,25 @@
 
     <TextView
         android:id="@+id/sunrise"
-        android:layout_width="192dp"
+        android:layout_width="210dp"
         android:layout_height="66dp"
-        android:layout_below="@+id/Location"
-        android:layout_marginTop="178dp"
-        android:layout_marginEnd="-17dp"
+        android:layout_below="@+id/description"
+        android:layout_marginTop="70dp"
         android:gravity="center"
         android:paddingLeft="15sp"
         android:text="Sunrise"
         android:textColor="@color/UioT_color"
+
         android:textSize="20sp"
         android:textStyle="bold"
-
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="195dp"
+        android:layout_width="190dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/Location"
-        android:layout_marginTop="70dp"
+        android:layout_below="@+id/imageView3"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="-17dp"
         android:gravity="center"
         android:paddingLeft="15sp"
@@ -40,11 +39,11 @@
 
     <TextView
         android:id="@+id/Feels"
-        android:layout_width="209dp"
+        android:layout_width="210dp"
         android:layout_height="45dp"
-        android:layout_below="@+id/Location"
+        android:layout_below="@+id/Temp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="9dp"
         android:gravity="center"
         android:paddingLeft="15sp"
@@ -56,12 +55,12 @@
 
     <TextView
         android:id="@+id/sunset"
-        android:layout_width="215dp"
+        android:layout_width="210dp"
         android:layout_height="63dp"
-        android:layout_below="@+id/Location"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="179dp"
-        android:layout_marginEnd="12dp"
+        android:layout_below="@+id/Feels"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="52dp"
+        android:layout_toEndOf="@+id/sunrise"
         android:gravity="center"
         android:paddingLeft="15sp"
         android:text="Sunset"
@@ -74,7 +73,7 @@
         android:id="@+id/Location"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
+        android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/as"
         android:gravity="center"
         android:paddingLeft="15sp"
@@ -87,25 +86,27 @@
     <TextView
         android:id="@+id/as"
         android:layout_width="155dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="5dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/imageView"
+        android:autoSizeMaxTextSize="25sp"
+        android:autoSizeMinTextSize="18sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
         android:paddingLeft="15sp"
         android:text="UiOT"
         android:textColor="@color/UioT_color"
-        android:textSize="25sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/Temp"
-        android:layout_width="207dp"
+        android:layout_width="220dp"
         android:layout_height="63dp"
-        android:layout_below="@+id/Location"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="9dp"
+        android:layout_below="@+id/Day"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/description"
         android:gravity="center"
         android:paddingLeft="15sp"
         android:text="Temp"
@@ -116,11 +117,11 @@
 
     <TextView
         android:id="@+id/Day"
-        android:layout_width="217dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Location"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="4dp"
         android:paddingLeft="15sp"
         android:gravity="center"
@@ -132,33 +133,33 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:srcCompat="@drawable/user" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="189dp"
-        android:layout_height="66dp"
+        android:layout_width="190dp"
+        android:layout_height="65dp"
         android:layout_below="@+id/as"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="10dp"
         app:srcCompat="@drawable/cloud" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="196dp"
-        android:layout_height="76dp"
+        android:layout_width="210dp"
+        android:layout_height="75dp"
         android:layout_below="@+id/sunrise"
         android:layout_marginTop="4dp"
         app:srcCompat="@drawable/sunrise" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="209dp"
+        android:layout_width="210dp"
         android:layout_height="75dp"
         android:layout_below="@+id/sunset"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="4dp"
         android:layout_toEndOf="@+id/imageView4"
         app:srcCompat="@drawable/sunset" />
 
@@ -167,7 +168,7 @@
         android:layout_width="216dp"
         android:layout_height="104dp"
         android:layout_below="@+id/imageView4"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="0dp"
         app:srcCompat="@drawable/humidity" />
 
     <TextView
@@ -175,9 +176,7 @@
         android:layout_width="218dp"
         android:layout_height="80dp"
         android:layout_below="@+id/imageView6"
-        android:layout_marginStart="-214dp"
         android:layout_marginTop="5dp"
-        android:layout_toEndOf="@+id/imageView6"
         android:gravity="center"
         android:text="Humidity"
         android:textColor="@color/UioT_color"
@@ -193,7 +192,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/custombtn"
         android:text="HOME"
         android:textColor="@color/editText"
         android:textSize="20sp"
@@ -208,7 +207,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginBottom="20dp"
         android:layout_toEndOf="@+id/button_Home"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/custombtn"
         android:text="MAP"
         android:textColor="@color/editText"
         android:textSize="20sp"
@@ -219,12 +218,12 @@
         android:id="@+id/button_Chart"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="41dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/custom_button"
+        android:layout_toEndOf="@+id/button_MAP"
+        android:background="@drawable/custombtn"
         android:text="CHART"
         android:textColor="@color/editText"
         android:textSize="20sp"

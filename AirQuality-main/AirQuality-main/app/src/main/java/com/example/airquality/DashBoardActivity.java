@@ -164,6 +164,21 @@ public class DashBoardActivity extends AppCompatActivity {
                     location.setText(Location);
                     String weather = asset.attributes.data.value.weather[0].description;
                     descript.setText(weather);
+                    String main = asset.attributes.data.value.weather[0].main;
+                    switch (main) {
+                        case "Clouds":
+                            Descript.setImageResource(R.drawable.cloud);
+                            break;
+                        case "Clear":
+                            Descript.setImageResource(R.drawable.bg_clear);
+                            break;
+                        case "Rain":
+                            Descript.setImageResource(R.drawable.rain);
+                            break;
+                        case "Sunny":
+                            Descript.setImageResource(R.drawable.sunny);
+                            break;
+                    }
                 }
             }}
 
@@ -171,9 +186,5 @@ public class DashBoardActivity extends AppCompatActivity {
             public void onFailure(Call<Asset> callinfo, Throwable t) {
             }
         });
-        if (descript.getVisibility() == View.INVISIBLE)
-        {
-            Toast.makeText(DashBoardActivity.this,"No Permission",Toast.LENGTH_LONG).show();
-        }
     }
 }

@@ -44,6 +44,9 @@ public class Asset {
                 {
                     @SerializedName("description")
                     public String description;
+                    @SerializedName("main")
+                    public String main;
+
                 }
             }
         }
