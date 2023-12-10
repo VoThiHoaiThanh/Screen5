@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     Toast.makeText(LoginActivity.this,"Log in Successful!!!",Toast.LENGTH_SHORT).show();
                     token = response.body().getAccess_token();
-                    Intent intent = new Intent(LoginActivity.this, DashBoardActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MapActivity.class);
                     Bundle mybundle = new Bundle();
                     mybundle.putString("token",token);
                     mybundle.putString("user",editTextUserName.getText().toString());

@@ -9,6 +9,7 @@ import java.util.Locale;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,11 +27,14 @@ public class DashBoardActivity extends AppCompatActivity {
     APIInterface apiInterface;
     TextView user, DayofWeek, location, Temp, Feels, descript, Sunrise, Sunset, Humidity;
     ImageView Descript, SRise, SSet, Hum;
+    Button Map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
+        //Button
+        Map = findViewById(R.id.button_MAP);
         //Textview
         user = findViewById(R.id.as);
         DayofWeek = findViewById(R.id.Day);
@@ -65,7 +69,17 @@ public class DashBoardActivity extends AppCompatActivity {
         String User = bundle.getString("user");
         String token = bundle.getString("token");
         user.setText("Hi, " + User);
-
+        Map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashBoardActivity.this, MapActivity.class);
+                Bundle mybundle = new Bundle();
+                mybundle.putString("token",token);
+                mybundle.putString("user",User);
+                intent.putExtra("mypackage",mybundle);
+                startActivity(intent);
+            }
+        });
         apiInterface = ApIClient.setToken(token);
         apiInterface = ApIClient.getClient().create(APIInterface.class);
 
